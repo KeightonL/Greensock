@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--
+	NOTES:
+	1. All tokens are represented by '$' sign in the template.
+	2. You can write your code only wherever mentioned.
+	3. All occurrences of existing tokens will be replaced by their appropriate values.
+	4. Blank lines will be removed automatically.
+	5. Remove unnecessary comments before creating your template.
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>car-adobe</title>
+<!-- write your code here -->
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script>
+(function (cjs, an) {
+var p; // shortcut to reference prototypes
+var lib={};var ss={};var img={};
+lib.ssMetadata = [
+		{name:"car_adobe_atlas_", frames: [[0,482,550,400],[0,0,850,480],[0,884,396,396],[552,482,288,283]]}
+];
+// symbols:
+(lib.bg = function() {
+	this.spriteSheet = ss["car_adobe_atlas_"];
+	this.gotoAndStop(0);
+}).prototype = p = new cjs.Sprite();
+(lib.car = function() {
+	this.spriteSheet = ss["car_adobe_atlas_"];
+	this.gotoAndStop(1);
+}).prototype = p = new cjs.Sprite();
+(lib.vauxhall = function() {
+	this.spriteSheet = ss["car_adobe_atlas_"];
+	this.gotoAndStop(2);
+}).prototype = p = new cjs.Sprite();
+(lib.wheel = function() {
+	this.spriteSheet = ss["car_adobe_atlas_"];
+	this.gotoAndStop(3);
+}).prototype = p = new cjs.Sprite();
+// helper functions:
+function mc_symbol_clone() {
+	var clone = this._cloneProps(new this.constructor(this.mode, this.startPosition, this.loop));
+	clone.gotoAndStop(this.currentFrame);
+	clone.paused = this.paused;
+	clone.framerate = this.framerate;
+	return clone;
+}
+function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
+	var prototype = cjs.extend(symbol, cjs.MovieClip);
+	prototype.clone = mc_symbol_clone;
+	prototype.nominalBounds = nominalBounds;
+	prototype.frameBounds = frameBounds;
+	return prototype;
+	}
+(lib.wheelR = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Layer 1
+	this.instance = new lib.wheel();
+	this.instance.parent = this;
+	this.instance.setTransform(-34.7,-34.1,0.241,0.241);
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+}).prototype = getMCSymbolPrototype(lib.wheelR, new cjs.Rectangle(-34.7,-34.1,69.5,68.3), null);
+(lib.wheelL = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Layer 1
+	this.instance = new lib.wheel();
+	this.instance.parent = this;
+	this.instance.setTransform(-34.7,-34.1,0.241,0.241);
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+}).prototype = getMCSymbolPrototype(lib.wheelL, new cjs.Rectangle(-34.7,-34.1,69.5,68.3), null);
+(lib.logo = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Layer 1
+	this.instance = new lib.vauxhall();
+	this.instance.parent = this;
+	this.instance.setTransform(-162,-162,0.818,0.818);
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+}).prototype = getMCSymbolPrototype(lib.logo, new cjs.Rectangle(-162,-162,324,324), null);
+(lib.car_1 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// Layer 1
+	this.instance = new lib.car();
+	this.instance.parent = this;
+	this.instance.setTransform(-222.9,-125.9,0.525,0.525);
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+}).prototype = getMCSymbolPrototype(lib.car_1, new cjs.Rectangle(-222.9,-125.9,445.9,251.8), null);
+// stage content:
+(lib.caradobe = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+	// timeline functions:
+	this.frame_0 = function() {
+		var car = this.car;
+		var wheelL = this.wheelL;
+		var wheelR = this.wheelR;
+		var text1 = this.text1;
+		var text2 = this.text2;
+		var text3 = this.text3;
+		var text4 = this.text4;
+		var logo = this.logo;
+		var price = [text2, text3, text4];
+		var spin = [wheelL, wheelR];
+		var tl = new TimelineMax({repeat: 1, repeatDelay: 2});
+		tl.to(car, 2, {x:200, ease: Power4.easeOut},0)
+		.to(wheelR, 2, {x:319, ease: Power4.easeOut},0)
+		.to(wheelL, 2, {x:63, ease: Power4.easeOut},0)
+		.to(spin,1.5, {rotation: 360},0)
+		.to(text1, .8, {x:215, ease: Back.easeOut.config(2)})
+		.to(text1, 2, {alpha: 0})
+		.to(text2, 0.5, {y: 25})
+		.to(text3, 1, {y: 25})
+		.to(text4, 1.5, {y: 25})
+		.to(car, 1.4, {x:750, ease: Power4.easeOut},8)
+		.to(wheelR, 1.4, {x:900, ease: Power4.easeOut},8)
+		.to(wheelL, 1.4, {x:615, ease: Power4.easeOut},8)
+		.to(spin, 0.5, {rotation: 720},8)
+		.fromTo(price, 0.5, {alpha:1}, {alpha: 0})
+		.fromTo(logo, 1.5, {alpha:0}, {alpha: 1});
+	}
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	// Layer 8
+	this.wheelL = new lib.wheelL();
+	this.wheelL.parent = this;
+	this.wheelL.setTransform(-326.2,246.2);
+	this.wheelR = new lib.wheelR();
+	this.wheelR.parent = this;
+	this.wheelR.setTransform(-73.5,247.9);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.wheelR},{t:this.wheelL}]}).wait(1));
+	// Layer 9
+	this.car = new lib.car_1();
+	this.car.parent = this;
+	this.car.setTransform(-193,176.9);
+	this.timeline.addTween(cjs.Tween.get(this.car).wait(1));
+	// Layer 7
+	this.logo = new lib.logo();
+	this.logo.parent = this;
+	this.logo.setTransform(275,200);
+	this.timeline.addTween(cjs.Tween.get(this.logo).wait(1));
+	// Layer 2
+	this.text1 = new cjs.Text("The All New\n     Vauxhall Corsa", "46px 'Impact'", "#FFFFFF");
+	this.text1.name = "text1";
+	this.text1.lineHeight = 58;
+	this.text1.lineWidth = 330;
+	this.text1.parent = this;
+	this.text1.setTransform(552,11);
+	this.text4 = new cjs.Text("£8999", "48px 'Impact'", "#FFFFFF");
+	this.text4.name = "text4";
+	this.text4.lineHeight = 61;
+	this.text4.lineWidth = 131;
+	this.text4.parent = this;
+	this.text4.setTransform(309,-77.5);
+	this.text3 = new cjs.Text("ONLY", "48px 'Impact'", "#FFFFFF");
+	this.text3.name = "text3";
+	this.text3.lineHeight = 61;
+	this.text3.lineWidth = 100;
+	this.text3.parent = this;
+	this.text3.setTransform(201,-77.5);
+	this.text2 = new cjs.Text("FROM", "48px 'Impact'", "#FFFFFF");
+	this.text2.name = "text2";
+	this.text2.lineHeight = 61;
+	this.text2.lineWidth = 106;
+	this.text2.parent = this;
+	this.text2.setTransform(78,-78.4);
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.text2},{t:this.text3},{t:this.text4},{t:this.text1}]}).wait(1));
+	// Layer 6
+	this.instance = new lib.bg();
+	this.instance.parent = this;
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-141,119.6,1300,480.4);
+// library properties:
+lib.properties = {
+	id: '398B92AF48F444FC8E7587F212C18449',
+	width: 550,
+	height: 400,
+	fps: 24,
+	color: "#FFFFFF",
+	opacity: 1.00,
+	manifest: [
+		{src:"images/car_adobe_atlas_.png?1504713193037", id:"car_adobe_atlas_"}
+	],
+	preloads: []
+};
+// bootstrap callback support:
+(lib.Stage = function(canvas) {
+	createjs.Stage.call(this, canvas);
+}).prototype = p = new createjs.Stage();
+p.setAutoPlay = function(autoPlay) {
+	this.tickEnabled = autoPlay;
+}
+p.play = function() { this.tickEnabled = true; this.getChildAt(0).gotoAndPlay(this.getTimelinePosition()) }
+p.stop = function(ms) { if(ms) this.seek(ms); this.tickEnabled = false; }
+p.seek = function(ms) { this.tickEnabled = true; this.getChildAt(0).gotoAndStop(lib.properties.fps * ms / 1000); }
+p.getDuration = function() { return this.getChildAt(0).totalFrames / lib.properties.fps * 1000; }
+p.getTimelinePosition = function() { return this.getChildAt(0).currentFrame / lib.properties.fps * 1000; }
+an.bootcompsLoaded = an.bootcompsLoaded || [];
+if(!an.bootstrapListeners) {
+	an.bootstrapListeners=[];
+}
+an.bootstrapCallback=function(fnCallback) {
+	an.bootstrapListeners.push(fnCallback);
+	if(an.bootcompsLoaded.length > 0) {
+		for(var i=0; i<an.bootcompsLoaded.length; ++i) {
+			fnCallback(an.bootcompsLoaded[i]);
+		}
+	}
+};
+an.compositions = an.compositions || {};
+an.compositions['398B92AF48F444FC8E7587F212C18449'] = {
+	getStage: function() { return exportRoot.getStage(); },
+	getLibrary: function() { return lib; },
+	getSpriteSheet: function() { return ss; },
+	getImages: function() { return img; }
+};
+an.compositionLoaded = function(id) {
+	an.bootcompsLoaded.push(id);
+	for(var j=0; j<an.bootstrapListeners.length; j++) {
+		an.bootstrapListeners[j](id);
+	}
+}
+an.getComposition = function(id) {
+	return an.compositions[id];
+}
+})(createjs = createjs||{}, AdobeAn = AdobeAn||{});
+var createjs, AdobeAn;
+</script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("398B92AF48F444FC8E7587F212C18449");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.caradobe();
+	stage = new lib.Stage(canvas);
+	stage.addChild(exportRoot);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;		
+		}
+	}
+	makeResponsive(false,'both',false,1);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;">
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:550px; height:400px">
+		<canvas id="canvas" width="550" height="400" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:550px; height:400px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+</body>
+</html>
